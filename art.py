@@ -183,34 +183,34 @@ def weighted_random_choice(options):
         if rand <= current_weight:
             return key
 
-# Define possible species with their corresponding weights
-species = [
-    ("wolf", 15),
-    ("🐺", 1)
-]
+# Define possible species, adjectives, and variants as sets
+species = {
+    "wolf",
+    "🐺"
+}
 
-adjectives = [
-    ("fierce", 2),
-    ("majestic", 3),
-    ("playful", 2),
-    ("mysterious", 2)
-]
+adjectives = {
+    "fierce",
+    "majestic",
+    "playful",
+    "mysterious"
+}
 
-variants = [
-    ("anthropomorphic", 1),
-    ("wild", 2),
-    ("fantasy", 1)
-]
+variants = {
+    "anthropomorphic",
+    "wild",
+    "fantasy"
+}
 
 # Randomly choose whether to include an adjective and variant
 include_adjective = random.choices([True, False], [3, 1])[0]
 include_variant = random.choices([True, False], [2, 1])[0]
-# Randomly choose a species based on weights
-random_species = random.choices(*zip(*species))[0]
-# Randomly choose an adjective based on weights
-random_adjective = random.choices(*zip(*adjectives))[0] if include_adjective else ""
-# Randomly choose a variant based on weights
-random_variant = random.choices(*zip(*variants))[0] if include_variant else ""
+# Randomly choose a species based on the set
+random_species = random.choice(list(species))
+# Randomly choose an adjective based on the set
+random_adjective = random.sample(list(adjectives), 1)[0] if include_adjective else ""
+# Randomly choose a variant based on the set
+random_variant = random.sample(list(variants), 1)[0] if include_variant else ""
 # Initialize the subject with the selected species
 subject = random_species
 
@@ -221,6 +221,18 @@ if include_adjective:
 # Add a variant if selected
 if include_variant:
     subject = f"{random_variant} {subject}"
+
+# Randomly choose an article ("a," "an," or nothing) based on weights
+articles = [
+    ("a ", 30),
+    ("an ", 30),
+    ("", 10),
+    ("an image of ", 10),
+    ("a image of ", 10),
+    ("an image of a ", 5),
+    ("an image of an ", 5)
+]
+article = weighted_random_choice(dict(articles))
 
 # Choose a random background style based on weights
 random_background = weighted_random_choice(backgrounds)
@@ -234,22 +246,9 @@ random_lighting = weighted_random_choice(lighting_tags)
 random_qualities = random.sample(list(qualities), 2)
 first_quality, second_quality = random_qualities
 
-# Randomly choose an article ("a," "an," or nothing)
-articles = [
-    ("a ", 30),
-    ("an ", 30),
-    ("", 10),
-    ("an image of ", 10),
-    ("a image of ", 10),
-    ("an image of a ", 5),
-    ("an image of an ", 5)
-]
-article = random.choice(articles)
-# TODO: Uncomment over IQ 60.
-#article = "an " if subject[0].lower() in "aeiou" else "a "
-
-# Choose a random article ("a," "an," or nothing) based on weights
-article = weighted_random_choice(articles)
+# Randomly choose an artist and a dead artist
+random_artist = weighted_random_choice(artists)
+random_dead_artist = weighted_random_choice(dead_artists)
 
 # Generate the prompt.
 prompt = f"{article}{subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
@@ -257,4 +256,3 @@ prompt = f"{article}{subject}, {random_background}, {random_color}, {random_styl
 print(prompt)
 # Copy prompt to clipboard.
 pyperclip.copy(prompt)
-
