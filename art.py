@@ -26,9 +26,7 @@ species = {
     "snake": 10,       # Snakes are favored
     "🐍": 20,          # Snake emoji
     "owl": 10,         # Owls are favored
-    "🦉": 20,          # Owl emoji
     "hawk": 10,        # Hawks are favored
-    "🦅": 20,          # Hawk emoji
     "falcon": 10,      # Falcons are favored
     "eagle": 10        # Eagles are favored
 }
