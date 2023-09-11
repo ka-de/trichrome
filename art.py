@@ -1,5 +1,25 @@
 import random
 import pyperclip
+from datetime import datetime
+
+# Define possible species, adjectives, and variants as sets and whatever that is...
+species = {
+    "wolf",
+    "🐺"
+}
+
+adjectives = {
+    "fierce",
+    "majestic",
+    "playful",
+    "mysterious"
+}
+
+variants = {
+    "anthropomorphic",
+    "wild",
+    "fantasy"
+}
 
 artists = {
     "Dmitriy Bessonov": 2,
@@ -47,53 +67,79 @@ artists = {
     "Alex Figini": 1,
 }
 
-# Define dead artists with weights
+# Current year unfolds,
+# Time's passage, story untold,
+# A year's tale, behold.
+current_year = datetime.now().year
+
+# Dead artists with weight,
+# Time elapsed, poetic fate,
+# Eternal debate.
 dead_artists = {
-    "Leonardo da Vinci": 1,
-    "Michelangelo Buonarroti": 1,
-    "Raphael": 1,
-    "Caravaggio": 1,
-    "Rembrandt van Rijn": 1,
-    "Vermeer": 1,
-    "Titian": 1,
-    "Hieronymus Bosch": 1,
-    "Pieter Bruegel the Elder": 1,
-    "Sandro Botticelli": 1,
-    "Giotto di Bondone": 1,
-    "Jan van Eyck": 1,
-    "El Greco": 1,
-    "Peter Paul Rubens": 1,
-    "Vincent van Gogh": 1,
-    "Claude Monet": 1,
-    "Edgar Degas": 1,
-    "Edouard Manet": 1,
-    "Pierre-Auguste Renoir": 1,
-    "Georges Seurat": 1,
-    "Henri Matisse": 1,
-    "Paul Cézanne": 1,
-    "Paul Gauguin": 1,
-    "Henri de Toulouse-Lautrec": 1,
-    "Marc Chagall": 1,
-    "Gustav Klimt": 1,
-    "Amedeo Modigliani": 1,
-    "Pablo Picasso": 1,
-    "Frida Kahlo": 1,
-    "Diego Rivera": 1,
-    "Jackson Pollock": 1,
-    "Willem de Kooning": 1,
-    "Edvard Munch": 1,
-    "Kazimir Malevich": 1,
-    "Gustave Courbet": 1,
-    "William Turner": 1,
-    "John Singer Sargent": 1,
-    "James Whistler": 1,
-    "Mary Cassatt": 1,
-    "Camille Pissarro": 1,
+    "Leonardo da Vinci": current_year - 1519,
+    "Michelangelo Buonarroti": current_year - 1564,
+    "Raphael": current_year - 1520,
+    "Caravaggio": current_year - 1610,
+    "Rembrandt van Rijn": current_year - 1669,
+    "Vermeer": current_year - 1675,
+    "Titian": current_year - 1576,
+    "Hieronymus Bosch": current_year - 1516,
+    "Pieter Bruegel the Elder": current_year - 1569,
+    "Sandro Botticelli": current_year - 1510,
+    "Giotto di Bondone": current_year - 1337,
+    "Jan van Eyck": current_year - 1441,
+    "El Greco": current_year - 1614,
+    "Peter Paul Rubens": current_year - 1640,
+    "Vincent van Gogh": current_year - 1890,
+    "Claude Monet": current_year - 1926,
+    "Edgar Degas": current_year - 1917,
+    "Edouard Manet": current_year - 1883,
+    "Pierre-Auguste Renoir": current_year - 1919,
+    "Georges Seurat": current_year - 1891,
+    "Henri Matisse": current_year - 1954,
+    "Paul Cézanne": current_year - 1906,
+    "Paul Gauguin": current_year - 1903,
+    "Henri de Toulouse-Lautrec": current_year - 1901,
+    "Marc Chagall": current_year - 1985,
+    "Gustav Klimt": current_year - 1918,
+    "Amedeo Modigliani": current_year - 1920,
+    "Pablo Picasso": current_year - 1973,
+    "Frida Kahlo": current_year - 1954,
+    "Diego Rivera": current_year - 1957,
+    "Jackson Pollock": current_year - 1956,
+    "Willem de Kooning": current_year - 1997,
+    "Edvard Munch": current_year - 1944,
+    "Kazimir Malevich": current_year - 1935,
+    "Gustave Courbet": current_year - 1877,
+    "William Turner": current_year - 1851,
+    "John Singer Sargent": current_year - 1925,
+    "James Whistler": current_year - 1903,
+    "Mary Cassatt": current_year - 1926,
+    "Camille Pissarro": current_year - 1903,
+    "Jean Dubuffet": current_year - 1985,
+    "Yves Klein": current_year - 1962,
+    "Philip Guston": current_year - 1980,
+    "Ad Reinhardt": current_year - 1967,
+    "Wassily Kandinsky": current_year - 1944,
+    "Giacomo Balla": current_year - 1958,
+    "Tarsila do Amaral": current_year - 1973,
+    "Kazimir Malevich": current_year - 1935,
+    "Paul Klee": current_year - 1940,
+    "Hans Hofmann": current_year - 1966,
+    "Piet Mondrian": current_year - 1944,
+    "Joan Miró": current_year - 1983,
+    "Georgia O'Keeffe": current_year - 1986,
+    "Edward Hopper": current_year - 1967,
+    "Max Ernst": current_year - 1976,
+    "Marc Chagall": current_year - 1985,
+    "Frida Kahlo": current_year - 1954,
+    "Diego Rivera": current_year - 1957,
+    "Jackson Pollock": current_year - 1956,
+    "Willem de Kooning": current_year - 1997,
+    "Edvard Munch": current_year - 1944,
+    "Amedeo Modigliani": current_year - 1920,
+    "Pablo Picasso": current_year - 1973,
 }
-
-
-random_artist = random.choice(list(artists))
-random_dead_artist = random.choice(list(dead_artists))
 
 backgrounds = {
     "psychedelic background": 1,
@@ -173,6 +219,70 @@ qualities = {
     "sublime realism": 3,
 }
 
+articles = [
+    ("a ", 30),
+    ("an ", 30),
+    ("", 10),
+    ("photo of ", 10),
+    ("photo of an ", 10),
+    ("photo of a ", 10),
+    ("a beautiful photo photo of ", 10),
+    ("a beautiful photo photo of an ", 10),
+    ("a beautiful photo photo of a ", 10),
+    ("a beautiful image of ", 10),
+    ("a beautiful image of an ", 10),
+    ("a beautiful image of a", 10),
+    ("an image of ", 10),
+    ("a image of ", 10),
+    ("an image of a ", 5),
+    ("an image of an ", 5),
+    ("the ", 10),
+    ("this ", 5),
+    ("some ", 5),
+    ("my ", 5),
+    ("your ", 5),
+    ("our ", 5),
+    ("their ", 5),
+    ("that ", 5),
+    ("these ", 5),
+    ("those ", 5),
+    ("every ", 5),
+    ("any ", 5),
+    ("each ", 5),
+    ("another ", 5),
+    ("several ", 5),
+    ("many ", 5),
+    ("more ", 5),
+    ("few ", 5),
+    ("one ", 5),
+    ("two ", 5),
+    ("three ", 5),
+    ("four ", 5),
+    ("five ", 5),
+    ("my little ", 1),
+    ("a new ", 5),
+    ("the big ", 5),
+    ("your favorite ", 5),
+    ("some old ", 5),
+    ("an interesting ", 5),
+    ("another exciting ", 5),
+    ("this mysterious ", 15),
+    ("a giant ", 51),
+    ("the tiny ", 51),
+    ("their colorful ", 35),
+    ("everyday ", 5),
+    ("any peculiar ", 5),
+    ("several shiny ", 35),
+    ("many ancient ", 5),
+    ("more delicious ", 30),
+    ("few hidden ", 15),
+    ("one magical ", 5),
+    ("two mysterious ", 5),
+    ("three musical ", 25),
+    ("four futuristic ", 35),
+    ("five incredible ", 45),
+]
+
 # Weighted random selections
 def weighted_random_choice(options):
     total_weight = sum(options.values())
@@ -183,29 +293,11 @@ def weighted_random_choice(options):
         if rand <= current_weight:
             return key
 
-# Define possible species, adjectives, and variants as sets
-species = {
-    "wolf",
-    "🐺"
-}
-
-adjectives = {
-    "fierce",
-    "majestic",
-    "playful",
-    "mysterious"
-}
-
-variants = {
-    "anthropomorphic",
-    "wild",
-    "fantasy"
-}
-
+random_artist = random.choice(list(artists))
+random_dead_artist = random.choice(list(dead_artists))
 # Randomly choose whether to include an adjective and variant
 include_adjective = random.choices([True, False], [3, 1])[0]
-include_variant = random.choices([True, False], [2, 1])[0]
-# Randomly choose a species based on the set
+include_variant = random.choices([True, False], [14, 1])[0]
 random_species = random.choice(list(species))
 # Randomly choose an adjective based on the set
 random_adjective = random.sample(list(adjectives), 1)[0] if include_adjective else ""
@@ -223,15 +315,6 @@ if include_variant:
     subject = f"{random_variant} {subject}"
 
 # Randomly choose an article ("a," "an," or nothing) based on weights
-articles = [
-    ("a ", 30),
-    ("an ", 30),
-    ("", 10),
-    ("an image of ", 10),
-    ("a image of ", 10),
-    ("an image of a ", 5),
-    ("an image of an ", 5)
-]
 article = weighted_random_choice(dict(articles))
 
 # Choose a random background style based on weights
