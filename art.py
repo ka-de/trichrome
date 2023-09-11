@@ -2,25 +2,37 @@ import random
 import pyperclip
 from datetime import datetime
 
-# Define possible species, adjectives, and variants as sets and whatever that is...
+# Define possible species, adjectives, and variants as sets and whatever that is..
 species = {
     "wolf",
     "🐺"
 }
 
 adjectives = {
-    "fierce",
-    "majestic",
-    "playful",
-    "mysterious"
+    "fierce": 1,
+    "majestic": 1,
+    "playful": 1,
+    "mysterious": 1,
     "gothic": 2,
-    "from vampire the masquerade", 3
+    "from vampire the masquerade": 3
 }
 
 variants = {
-    "anthropomorphic",
-    "wild",
-    "fantasy"
+    "anthropomorphic": 300,
+    "wild": 200,
+    "fantasy": 200,
+    "realistic": 100,
+    "psychedelic": 60,
+    "abstract": 50,
+    "sci-fi": 50,
+    "surreal": 25,
+    "minimalistic": 10,
+    "steampunk": 50,
+    "cyberpunk": 50,
+    "mystical": 100,
+    "vintage": 20,
+    "modern": 10,
+    "digital": 10,
 }
 
 artists = {
