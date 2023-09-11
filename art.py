@@ -212,9 +212,26 @@ colors = {
     "neon colors": 2,
     "mystical hues": 3,
     "ethereal shades": 2,
-    "candy-coated palette": 2,
-    "gloomy tints": 2,
+    "candy-coated palette": 4,
+    "gloomy tints": 4,
     "celestial colors": 3,
+    "whimsical shades": 5,
+    "dreamy gradients": 5,
+    "funky pigments": 5,
+    "jazzy tones": 5,
+    "enchanted spectrum": 5,
+    "extraterrestrial hues": 5,
+    "hypnotic tints": 5,
+    "surrealistic shades": 5,
+    "psychochromatic palette": 5,
+    "vivid hallucinations": 5,
+    "otherworldly colors": 5,
+    "vortex of pigments": 5,
+    "phantasmagoric shades": 5,
+    "mind-bending hues": 5,
+    "chaotic color explosion": 5,
+    "whimsical wonderland": 5,
+    "absurdly vivid spectrum": 5
 }
 
 styles = {
