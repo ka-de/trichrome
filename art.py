@@ -2,7 +2,7 @@ import random
 import pyperclip
 from datetime import datetime
 
-# Define possible species, adjectives, and variants as sets and whatever that is..
+# Define possible species, adjectives, and franchises as sets and whatever that is..
 species = {
     #"wolf", 2000       # Wolves are preferred
     #"🐺", 1000         # Wolf emojis are ok sometimes
@@ -32,29 +32,6 @@ species = {
 }
 
 adjectives = {
-    "fierce": 1,
-    "majestic": 1,
-    "playful": 1,
-    "mysterious": 1,
-    "gothic": 2,
-    "from the vampire the masquerade": 3,
-    "from bloodborne": 10,
-    "from dark souls": 10,
-    "from castlevania": 10,
-    "from sekiro": 10,
-    "from hollow knight": 10,
-    "from the witcher 3": 10,
-    "from resident evil": 10,
-    "from the silent hill": 10,
-    "from amnesia dark descent": 10,
-    "from the order: 1886": 10,
-    "from bloodborne kart": 10,
-    "from remnant: From the Ashes": 10,
-    "from elden ring": 1,
-}
-
-variants = {
-    "anthropomorphic": 300,
     "wild": 200,
     "fantasy": 200,
     "realistic": 100,
@@ -69,6 +46,28 @@ variants = {
     "vintage": 20,
     "modern": 10,
     "digital": 10,
+    "fierce": 1,
+    "majestic": 1,
+    "playful": 1,
+    "mysterious": 1,
+    "gothic": 2,
+}
+
+franchises = {
+    "from the vampire the masquerade": 3,
+    "from bloodborne": 10,
+    "from dark souls": 10,
+    "from castlevania": 10,
+    "from sekiro": 10,
+    "from hollow knight": 10,
+    "from the witcher 3": 10,
+    "from resident evil": 10,
+    "from the silent hill": 10,
+    "from amnesia dark descent": 10,
+    "from the order: 1886": 10,
+    "from bloodborne kart": 10,
+    "from remnant: From the Ashes": 10,
+    "from elden ring": 1,
 }
 
 artists = {
@@ -317,45 +316,45 @@ articles = [
     ("my ", 5),
     ("your ", 5),
     ("our ", 5),
-    ("their ", 5),
-    ("that ", 5),
-    ("these ", 5),
-    ("those ", 5),
+    #("their ", 5),
+    #("that ", 5),
+    #("these ", 5),
+    #("those ", 5),
     ("every ", 5),
     ("any ", 5),
     ("each ", 5),
     ("another ", 5),
-    ("several ", 5),
-    ("many ", 5),
+    #("several ", 5),
+    #("many ", 5),
     ("more ", 5),
     ("few ", 5),
     ("one ", 5),
     ("two ", 5),
     ("three ", 5),
     ("four ", 5),
-    ("five ", 5),
+    #("five ", 5),
     ("my little ", 1),
     ("a new ", 5),
     ("the big ", 5),
     ("your favorite ", 5),
     ("some old ", 5),
-    ("an interesting ", 5),
-    ("another exciting ", 5),
-    ("this mysterious ", 15),
-    ("a giant ", 51),
-    ("the tiny ", 51),
-    ("their colorful ", 35),
-    ("everyday ", 5),
-    ("any peculiar ", 5),
-    ("several shiny ", 35),
-    ("many ancient ", 5),
-    ("more delicious ", 30),
-    ("few hidden ", 15),
-    ("one magical ", 5),
+    #("an interesting ", 5),
+    #("another exciting ", 5),
+    #("this mysterious ", 15),
+    #("a giant ", 51),
+    #("the tiny ", 51),
+    #("their colorful ", 35),
+    #("everyday ", 5),
+    #("any peculiar ", 5),
+    #("several shiny ", 35),
+    #("many ancient ", 5),
+    #("more delicious ", 30),
+    #("few hidden ", 15),
+    #("one magical ", 5),
     ("two mysterious ", 5),
     ("three musical ", 25),
-    ("four futuristic ", 35),
-    ("five incredible ", 45),
+    #("four futuristic ", 35),
+    #("five incredible ", 45),
 ]
 
 # Weighted random selections
@@ -377,17 +376,17 @@ random_species = random.choice(list(species))
 # Randomly choose an adjective based on the set
 random_adjective = random.sample(list(adjectives), 1)[0] if include_adjective else ""
 # Randomly choose a variant based on the set
-random_variant = random.sample(list(variants), 1)[0] if include_variant else ""
+random_variant = random.sample(list(franchises), 1)[0] if include_variant else ""
 # Initialize the subject with the selected species
 subject = random_species
 
 # Add an adjective if selected
 if include_adjective:
-    subject = f"{random_adjective} {subject}"
+    subject = f"{random_adjective}"
 
 # Add a variant if selected
 if include_variant:
-    subject = f"{random_variant} {subject}"
+    subject = f"{random_variant}"
 
 # Randomly choose an article ("a," "an," or nothing) based on weights
 article = weighted_random_choice(dict(articles))
@@ -409,7 +408,7 @@ random_artist = weighted_random_choice(artists)
 random_dead_artist = weighted_random_choice(dead_artists)
 
 # Generate the prompt.
-prompt = f"{article}{subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
+prompt = f"{article}anthropomorphic {random_species}, {subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
 
 print(prompt)
 # Copy prompt to clipboard.
