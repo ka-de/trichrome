@@ -14,7 +14,7 @@ Trichrome is a versatile Python script that generates prompts for various creati
     - Export: Once you've generated a prompt you like, you can easily copy it to your clipboard for immediate use in your projects.
     - Variety: Generate a variety of different wolves, 4 legs, 3 legs, 2 legs, maybe even 5 legs.
 
-Designed by our expert token ticklers from Germany 🇩🇪, trichrome offers extensive customizable options, even down to the adjective!
+Designed by our expert token ticklers from Germany 🇩🇪, trichrome offers extensive customizable options, even down to the article!
 
 ```python
 # Define possible species with their corresponding weights
