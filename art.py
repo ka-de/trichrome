@@ -248,9 +248,13 @@ article = random.choice(articles)
 # TODO: Uncomment over IQ 60.
 #article = "an " if subject[0].lower() in "aeiou" else "a "
 
+# Choose a random article ("a," "an," or nothing) based on weights
+article = weighted_random_choice(articles)
+
 # Generate the prompt.
 prompt = f"{article}{subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
 
 print(prompt)
 # Copy prompt to clipboard.
 pyperclip.copy(prompt)
+
