@@ -22,7 +22,7 @@ species = {
     "bat": 10,         # Bats are favored
     "🦇": 20,          # Bat emoji
     "spider": 10,      # Spiders are favored
-    "🕷️": 20,         # Spider emoji
+    "🕷️": 20,          # Spider emoji
     "snake": 10,       # Snakes are favored
     "🐍": 20,          # Snake emoji
     "owl": 10,         # Owls are favored
