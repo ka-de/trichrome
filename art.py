@@ -138,7 +138,7 @@ backgrounds = {
     "vintage background": 2,
     "art nouveau background": 1,
     "victorian background": 3,
-    "steampunk background", 2,
+    "steampunk background": 2,
     "fantasy landscape": 3,
     "abstract background": 2,
     "sci-fi backdrop": 1,
