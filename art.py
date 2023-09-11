@@ -37,7 +37,20 @@ adjectives = {
     "playful": 1,
     "mysterious": 1,
     "gothic": 2,
-    "from vampire the masquerade": 3,
+    "from the vampire the masquerade": 3,
+    "from bloodborne": 10,
+    "from dark souls": 10,
+    "from castlevania": 10,
+    "from sekiro": 10,
+    "from hollow knight": 10,
+    "from the witcher 3": 10,
+    "from resident evil": 10,
+    "from the silent hill": 10,
+    "from amnesia dark descent": 10,
+    "from the order: 1886": 10,
+    "from bloodborne kart": 10,
+    "from remnant: From the Ashes": 10,
+    "from elden ring": 1,
 }
 
 variants = {
