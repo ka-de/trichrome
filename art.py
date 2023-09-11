@@ -14,7 +14,7 @@ adjectives = {
     "playful": 1,
     "mysterious": 1,
     "gothic": 2,
-    "from vampire the masquerade": 3
+    "from vampire the masquerade": 3,
 }
 
 variants = {
@@ -154,7 +154,7 @@ backgrounds = {
     "victorian background": 3,
     "steampunk background": 2,
     "gothic background": 2,
-    "vampire the masquerade", 3
+    "vampire the masquerade": 3,
     "fantasy landscape": 3,
     "abstract background": 2,
     "sci-fi backdrop": 1,
