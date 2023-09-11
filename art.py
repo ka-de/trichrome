@@ -2,10 +2,6 @@ import random
 import pyperclip
 from datetime import datetime
 
-import random
-import pyperclip
-from datetime import datetime
-
 # Define possible species, adjectives, and variants as sets and whatever that is..
 species = {
     #"wolf", 2000       # Wolves are preferred
