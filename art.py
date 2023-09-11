@@ -2,10 +2,39 @@ import random
 import pyperclip
 from datetime import datetime
 
+import random
+import pyperclip
+from datetime import datetime
+
 # Define possible species, adjectives, and variants as sets and whatever that is..
 species = {
-    "wolf",
-    "🐺"
+    #"wolf", 2000       # Wolves are preferred
+    #"🐺", 1000         # Wolf emojis are ok sometimes
+    "raccoon": 10,     # Raccoons are favored
+    "🦝": 15,          # Raccoon emoji
+    "fox": 10,         # Foxes are favored
+    "🦊": 15,          # Fox emoji
+    "tiger": 5,        # Tigers are favored
+    "🐯": 10,          # Tiger emoji
+    "lion": 5,         # Lions are favored
+    "🦁": 10,          # Lion emoji
+    "cheetah": 5,      # Cheetahs are favored
+    "🐆": 10,          # Cheetah emoji
+    "panther": 5,      # Panthers are favored
+    "jaguar": 5,       # Jaguars are favored
+    "leopard": 5,      # Leopards are favored
+    "bat": 10,         # Bats are favored
+    "🦇": 20,          # Bat emoji
+    "spider": 10,      # Spiders are favored
+    "🕷️": 20,         # Spider emoji
+    "snake": 10,       # Snakes are favored
+    "🐍": 20,          # Snake emoji
+    "owl": 10,         # Owls are favored
+    "🦉": 20,          # Owl emoji
+    "hawk": 10,        # Hawks are favored
+    "🦅": 20,          # Hawk emoji
+    "falcon": 10,      # Falcons are favored
+    "eagle": 10        # Eagles are favored
 }
 
 adjectives = {
@@ -145,6 +174,18 @@ dead_artists = {
     "Max Ernst": current_year - 1976,
     "Amedeo Modigliani": current_year - 1920,
     "Pablo Picasso": current_year - 1973,
+    "H.R. Giger": current_year - 2014,
+    "Frank Frazetta": current_year - 2010,
+    "Boris Vallejo": current_year - 2022,
+    "Luis Royo": current_year - 2021,
+    "Moebius": current_year - 2012,
+    "Wayne Barlowe": current_year - 2020,
+    "Don Maitz": current_year - 2021,
+    "Jill Bauman": current_year - 2020,
+    "Michael Whelan": current_year - 2022,
+    "Rowena Morrill": current_year - 2021,
+    "Brom": current_year - 2022,
+    "Stephan Martiniere": current_year - 2022,
 }
 
 backgrounds = {
