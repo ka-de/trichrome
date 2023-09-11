@@ -95,7 +95,6 @@ dead_artists = {
 random_artist = random.choice(list(artists))
 random_dead_artist = random.choice(list(dead_artists))
 
-subject = "anthropomorphic wolf"
 backgrounds = {
     "psychedelic background": 1,
     "vintage background": 2,
@@ -103,7 +102,13 @@ backgrounds = {
     "fantasy landscape": 3,
     "abstract background": 2,
     "sci-fi backdrop": 1,
+    "surreal dreamscape": 3,
+    "steampunk setting": 2,
+    "cyberpunk cityscape": 2,
+    "magical forest": 3,
+    "underwater abyss": 2,
 }
+
 colors = {
     "psychedelic colors": 2,
     "vibrant colors": 3,
@@ -112,7 +117,13 @@ colors = {
     "earth tones": 2,
     "monochromatic colors": 1,
     "neon colors": 2,
+    "mystical hues": 3,
+    "ethereal shades": 2,
+    "candy-coated palette": 2,
+    "gloomy tints": 2,
+    "celestial colors": 3,
 }
+
 styles = {
     "concept art": 7,
     "drawing": 4,
@@ -122,7 +133,13 @@ styles = {
     "comic book": 5,
     "realistic painting": 13,
     "anime": 1,
+    "impressionist brushwork": 3,
+    "minimalist design": 2,
+    "abstract expressionism": 4,
+    "vintage illustration": 3,
+    "surrealism": 4,
 }
+
 lighting_tags = {
     "cinematic lighting": 12,
     "natural lighting": 2,
@@ -131,7 +148,13 @@ lighting_tags = {
     "neon lighting": 1,
     "candlelight": 1,
     "underwater lighting": 1,
+    "ethereal radiance": 3,
+    "shadowplay": 2,
+    "twilight glow": 2,
+    "starry night": 3,
+    "mystic aura": 3,
 }
+
 qualities = {
     "seamless": 2,
     "ornament": 1,
@@ -143,6 +166,11 @@ qualities = {
     "realistic": 2,
     "3d": 2,
     "cycles render": 1,
+    "immaculate detail": 3,
+    "masterful craftsmanship": 2,
+    "intricate precision": 2,
+    "awe-inspiring scale": 3,
+    "sublime realism": 3,
 }
 
 # Weighted random selections
@@ -157,11 +185,10 @@ def weighted_random_choice(options):
 
 # Define possible species with their corresponding weights
 species = [
-    ("wolf", 5),
+    ("wolf", 15),
     ("🐺", 1)
 ]
 
-# List of possible adjectives with weights
 adjectives = [
     ("fierce", 2),
     ("majestic", 3),
@@ -169,7 +196,6 @@ adjectives = [
     ("mysterious", 2)
 ]
 
-# List of possible variants with weights
 variants = [
     ("anthropomorphic", 1),
     ("wild", 2),
@@ -177,18 +203,14 @@ variants = [
 ]
 
 # Randomly choose whether to include an adjective and variant
-include_adjective = random.choices([True, False], [2, 1])[0]
+include_adjective = random.choices([True, False], [3, 1])[0]
 include_variant = random.choices([True, False], [2, 1])[0]
-
 # Randomly choose a species based on weights
 random_species = random.choices(*zip(*species))[0]
-
 # Randomly choose an adjective based on weights
 random_adjective = random.choices(*zip(*adjectives))[0] if include_adjective else ""
-
 # Randomly choose a variant based on weights
 random_variant = random.choices(*zip(*variants))[0] if include_variant else ""
-
 # Initialize the subject with the selected species
 subject = random_species
 
@@ -200,15 +222,35 @@ if include_adjective:
 if include_variant:
     subject = f"{random_variant} {subject}"
 
+# Choose a random background style based on weights
 random_background = weighted_random_choice(backgrounds)
+# Choose a random art style based on weights
 random_style = weighted_random_choice(styles)
+# Choose a random color scheme based on weights
 random_color = weighted_random_choice(colors)
+# Choose a random lighting style based on weights
 random_lighting = weighted_random_choice(lighting_tags)
+# Sample two random qualities from the list
 random_qualities = random.sample(list(qualities), 2)
 first_quality, second_quality = random_qualities
 
-# Print the generated text
-output_text = f"{subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
+# Randomly choose an article ("a," "an," or nothing)
+articles = [
+    ("a ", 30),
+    ("an ", 30),
+    ("", 10),
+    ("an image of ", 10),
+    ("a image of ", 10),
+    ("an image of a ", 5),
+    ("an image of an ", 5)
+]
+article = random.choice(articles)
+# TODO: Uncomment over IQ 60.
+#article = "an " if subject[0].lower() in "aeiou" else "a "
 
-print(output_text)
-pyperclip.copy(output_text)
+# Generate the prompt.
+prompt = f"{article}{subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
+
+print(prompt)
+# Copy prompt to clipboard.
+pyperclip.copy(prompt)
