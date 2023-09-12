@@ -290,7 +290,6 @@ qualities = {
     "masterful craftsmanship": 2,
     "intricate precision": 2,
     "awe-inspiring scale": 3,
-    "sublime realism": 3,
 }
 
 articles = [
@@ -465,7 +464,7 @@ random_artist = weighted_random_choice(artists)
 random_dead_artist = weighted_random_choice(dead_artists)
 
 # Generate the prompt.
-prompt = f"{article}anthropomorphic {random_species}, {subject}, {random_background}, {random_color}, {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
+prompt = f"{article}anthropomorphic {random_species}, {subject}, {random_background}, {random_color}, sublime {random_style}, {random_lighting}, {first_quality}, {second_quality}, art by {random_artist} and {random_dead_artist}"
 
 print(prompt)
 # Copy prompt to clipboard.
