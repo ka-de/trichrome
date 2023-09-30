@@ -1,3 +1,6 @@
+# I'm not ready to share these finding with the world yet. ;-)
+*.ipynb*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

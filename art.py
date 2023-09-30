@@ -4,8 +4,8 @@ from datetime import datetime
 
 # Define possible species, adjectives, and franchises as sets and whatever that is..
 species = {
-    #"wolf", 2000       # Wolves are preferred
-    #"🐺", 1000         # Wolf emojis are ok sometimes
+    # "wolf", 2000       # Wolves are preferred
+    # "🐺", 1000         # Wolf emojis are ok sometimes
     "raccoon": 10,     # Raccoons are favored
     "🦝": 15,          # Raccoon emoji
     "fox": 10,         # Foxes are favored
@@ -31,6 +31,10 @@ species = {
     "eagle": 10        # Eagles are favored
 }
 
+species = {
+    "terence mckenna": 1
+}
+
 adjectives = {
     "wild": 200,
     "fantasy": 200,
@@ -51,6 +55,11 @@ adjectives = {
     "playful": 1,
     "mysterious": 1,
     "gothic": 2,
+}
+
+adjectives = {
+    "sci-fi": 1,
+    "cyberpunk": 1
 }
 
 franchises = {
@@ -414,6 +423,8 @@ articles = [
 ]
 
 # Weighted random selections
+
+
 def weighted_random_choice(options):
     total_weight = sum(options.values())
     rand = random.uniform(0, total_weight)
@@ -423,6 +434,7 @@ def weighted_random_choice(options):
         if rand <= current_weight:
             return key
 
+
 random_artist = random.choice(list(artists))
 random_dead_artist = random.choice(list(dead_artists))
 # Randomly choose whether to include an adjective and variant
@@ -430,9 +442,11 @@ include_adjective = random.choices([True, False], [3, 1])[0]
 include_variant = random.choices([True, False], [14, 1])[0]
 random_species = random.choice(list(species))
 # Randomly choose an adjective based on the set
-random_adjective = random.sample(list(adjectives), 1)[0] if include_adjective else ""
+random_adjective = random.sample(list(adjectives), 1)[
+    0] if include_adjective else ""
 # Randomly choose a variant based on the set
-random_variant = random.sample(list(franchises), 1)[0] if include_variant else ""
+random_variant = random.sample(list(franchises), 1)[
+    0] if include_variant else ""
 # Initialize the subject with the selected species
 subject = random_species
 
